@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Josue I. Coronado | Creative Developer & AI Design</title>
+  <link rel="stylesheet" href="style.css" />
+  <!-- Google Fonts: Syne (display) + JetBrains Mono (code/accents) + DM Sans (body) -->
+  <link rel="icon" type="image/png" href="assets/images/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=JetBrains+Mono:wght@300;400;500&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet" />
+  <!-- Iconos: Lucide via CDN -->
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js" defer></script>
+</head>
+<body>
+
+  <!-- ═══════════════════════════════════════════
+       SCROLL PROGRESS INDICATOR
+  ═══════════════════════════════════════════ -->
+  <div class="scroll-progress" id="scrollProgress"></div>
+
+  <!-- ═══════════════════════════════════════════
+       NAVIGATION
+  ═══════════════════════════════════════════ -->
+  <nav class="navbar" id="navbar" role="navigation" aria-label="Navegación principal">
+    <div class="nav-inner">
+      <!-- Logo / Brand -->
+      <a href="#hero" class="nav-logo" aria-label="Ir al inicio">
+        <span class="logo-bracket">[</span>
+        <span class="logo-name">JIC</span>
+        <span class="logo-bracket">]</span>
+      </a>
+
+      <!-- Desktop Links -->
+      <ul class="nav-links" role="list">
+        <li><a href="#about" class="nav-link">Acerca</a></li>
+        <li><a href="#skills" class="nav-link">Habilidades</a></li>
+        <li><a href="#projects" class="nav-link">Proyectos</a></li>
+        <li><a href="#contact" class="nav-link">Contacto</a></li>
+      </ul>
+
+      <!-- CTA Button -->
+      <a href="assets/cv.pdf" download class="nav-cta" aria-label="Descargar CV">
+        <span>CV</span>
+        <i data-lucide="download" aria-hidden="true"></i>
+      </a>
+
+      <!-- Hamburger (mobile) -->
+      <button class="hamburger" id="hamburger" aria-label="Abrir menú" aria-expanded="false" aria-controls="mobileMenu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu" role="dialog" aria-label="Menú móvil">
+      <ul role="list">
+        <li><a href="#about" class="mob-link">Acerca</a></li>
+        <li><a href="#skills" class="mob-link">Habilidades</a></li>
+        <li><a href="#projects" class="mob-link">Proyectos</a></li>
+        <li><a href="#contact" class="mob-link">Contacto</a></li>
+        <li><a href="assets/cv.pdf" download class="mob-link mob-cta">Descargar CV</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main>
+
+    <!-- ═══════════════════════════════════════════
+         HERO SECTION
+    ═══════════════════════════════════════════ -->
+    <section class="hero" id="hero" aria-labelledby="heroHeading">
+
+      <!-- Animated canvas background -->
+      <canvas class="hero-canvas" id="heroCanvas" aria-hidden="true"></canvas>
+
+      <!-- Tech grid overlay -->
+      <div class="hero-grid" aria-hidden="true"></div>
+
+      <div class="hero-content">
+        <!-- Status badge -->
+        <div class="status-badge fade-in" style="--delay:0.1s">
+          <span class="status-dot" aria-hidden="true"></span>
+          <span class="mono">disponible para proyectos</span>
+        </div>
+
+        <!-- Main heading -->
+        <h1 class="hero-name fade-in" id="heroHeading" style="--delay:0.25s">
+          Josue I.<br>
+          <span class="name-accent">Coronado</span>
+        </h1>
+
+        <!-- Role subtitle -->
+        <p class="hero-role fade-in mono" style="--delay:0.4s">
+          <span class="role-prefix">{'></span>
+          Creative Developer
+          <span class="role-separator"> | </span>
+          AI-Enhanced Design
+          <span class="cursor-blink" aria-hidden="true">_</span>
+        </p>
+
+        <!-- Description -->
+        <p class="hero-desc fade-in" style="--delay:0.55s">
+          Combino desarrollo web e inteligencia artificial para potenciar la creatividad,
+          optimizar ideas de diseño y construir experiencias digitales modernas.
+        </p>
+
+        <!-- CTA Buttons -->
+        <div class="hero-actions fade-in" style="--delay:0.7s">
+          <a href="#projects" class="btn btn-primary">
+            <i data-lucide="folder-open" aria-hidden="true"></i>
+            Ver Proyectos
+          </a>
+          <a href="assets/cv.pdf" download class="btn btn-ghost">
+            <i data-lucide="download" aria-hidden="true"></i>
+            Descargar CV
+          </a>
+        </div>
+
+        <!-- Scroll hint -->
+        <div class="scroll-hint fade-in" style="--delay:1s" aria-hidden="true">
+          <div class="scroll-line"></div>
+          <span class="mono">scroll</span>
+        </div>
+      </div>
+
+      <!-- Floating orbs decoration -->
+      <div class="orb orb-1" aria-hidden="true"></div>
+      <div class="orb orb-2" aria-hidden="true"></div>
+
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+         ABOUT SECTION
+    ═══════════════════════════════════════════ -->
+    <section class="about section" id="about" aria-labelledby="aboutHeading">
+      <div class="container">
+
+        <div class="section-label reveal">
+          <span class="mono">// 01</span>
+          <span>Acerca de mí</span>
+        </div>
+
+        <div class="about-grid">
+
+          <!-- Text column -->
+          <div class="about-text reveal">
+            <h2 class="section-title" id="aboutHeading">
+              Construyendo el futuro<br>
+              <span class="text-accent">con código y creatividad</span>
+            </h2>
+
+            <p class="about-para">
+              Soy un desarrollador apasionado por crear interfaces que no solo funcionan,
+              sino que <em>impresionan</em>. Mi enfoque combina fundamentos sólidos de
+              desarrollo web con el poder de las herramientas de IA modernas.
+            </p>
+            <p class="about-para">
+              Utilizo la inteligencia artificial como un <strong>socio creativo</strong>:
+              para generar conceptos, iterar sobre ideas de diseño y acelerar el proceso
+              creativo sin sacrificar la calidad.
+            </p>
+            <p class="about-para">
+              Me fascina la experimentación y el diseño digital moderno. Cada proyecto
+              es una oportunidad para explorar nuevas posibilidades en la intersección
+              del arte y la tecnología.
+            </p>
+
+            <div class="about-tags">
+              <span class="tag">Web Dev</span>
+              <span class="tag">AI Tools</span>
+              <span class="tag">UI Design</span>
+              <span class="tag">Creative Coding</span>
+            </div>
+          </div>
+
+          <!-- Stats / info cards column -->
+          <div class="about-cards reveal" style="--delay:0.15s">
+
+            <div class="about-card glass">
+              <div class="card-icon" aria-hidden="true">
+                <i data-lucide="code-2"></i>
+              </div>
+              <div>
+                <h3 class="card-title">Desarrollo Web</h3>
+                <p class="card-desc">HTML, CSS y JavaScript para crear experiencias web modernas y responsivas.</p>
+              </div>
+            </div>
+
+            <div class="about-card glass">
+              <div class="card-icon" aria-hidden="true">
+                <i data-lucide="cpu"></i>
+              </div>
+              <div>
+                <h3 class="card-title">IA Creativa</h3>
+                <p class="card-desc">Integración de herramientas de inteligencia artificial para potenciar el diseño y la creatividad.</p>
+              </div>
+            </div>
+
+            <div class="about-card glass">
+              <div class="card-icon" aria-hidden="true">
+                <i data-lucide="sparkles"></i>
+              </div>
+              <div>
+                <h3 class="card-title">Diseño Digital</h3>
+                <p class="card-desc">Experimentación y exploración de nuevas tendencias en el diseño de interfaces.</p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+         SKILLS SECTION
+    ═══════════════════════════════════════════ -->
+    <section class="skills section" id="skills" aria-labelledby="skillsHeading">
+      <div class="container">
+
+        <div class="section-label reveal">
+          <span class="mono">// 02</span>
+          <span>Habilidades</span>
+        </div>
+
+        <h2 class="section-title reveal" id="skillsHeading">
+          Stack y <span class="text-accent">herramientas</span>
+        </h2>
+
+        <div class="skills-grid">
+
+          <!-- Development -->
+          <div class="skill-card glass reveal" style="--delay:0s">
+            <div class="skill-card-header">
+              <div class="skill-icon" aria-hidden="true">
+                <i data-lucide="terminal"></i>
+              </div>
+              <h3 class="skill-category">Desarrollo</h3>
+            </div>
+            <ul class="skill-list" role="list">
+              <li class="skill-item">
+                <span class="skill-name">HTML5</span>
+                <div class="skill-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">
+                  <div class="skill-fill" style="--pct:90%"></div>
+                </div>
+              </li>
+              <li class="skill-item">
+                <span class="skill-name">CSS3</span>
+                <div class="skill-bar" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100">
+                  <div class="skill-fill" style="--pct:85%"></div>
+                </div>
+              </li>
+              <li class="skill-item">
+                <span class="skill-name">JavaScript</span>
+                <div class="skill-bar" role="progressbar" aria-valuenow="78" aria-valuemin="0" aria-valuemax="100">
+                  <div class="skill-fill" style="--pct:78%"></div>
+                </div>
+              </li>
+            </ul>
+          </div>
+
+          <!-- AI-Assisted Design -->
+          <div class="skill-card glass reveal" style="--delay:0.1s">
+            <div class="skill-card-header">
+              <div class="skill-icon" aria-hidden="true">
+                <i data-lucide="bot"></i>
+              </div>
+              <h3 class="skill-category">Diseño Asistido por IA</h3>
+            </div>
+            <ul class="skill-list" role="list">
+              <li class="skill-item">
+                <span class="skill-name">Generación de conceptos</span>
+                <div class="skill-bar" role="progressbar" aria-valuenow="92" aria-valuemin="0" aria-valuemax="100">
+                  <div class="skill-fill" style="--pct:92%"></div>
+                </div>
+              </li>
+              <li class="skill-item">
+                <span class="skill-name">Experimentación UI</span>
+                <div class="skill-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">
+                  <div class="skill-fill" style="--pct:80%"></div>
+                </div>
+              </li>
+              <li class="skill-item">
+                <span class="skill-name">Iteración con IA</span>
+                <div class="skill-bar" role="progressbar" aria-valuenow="88" aria-valuemin="0" aria-valuemax="100">
+                  <div class="skill-fill" style="--pct:88%"></div>
+                </div>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Creative Thinking -->
+          <div class="skill-card glass reveal" style="--delay:0.2s">
+            <div class="skill-card-header">
+              <div class="skill-icon" aria-hidden="true">
+                <i data-lucide="lightbulb"></i>
+              </div>
+              <h3 class="skill-category">Pensamiento Creativo</h3>
+            </div>
+            <ul class="skill-list" role="list">
+              <li class="skill-item">
+                <span class="skill-name">Resolución de problemas</span>
+                <div class="skill-bar" role="progressbar" aria-valuenow="87" aria-valuemin="0" aria-valuemax="100">
+                  <div class="skill-fill" style="--pct:87%"></div>
+                </div>
+              </li>
+              <li class="skill-item">
+                <span class="skill-name">Exploración de ideas</span>
+                <div class="skill-bar" role="progressbar" aria-valuenow="93" aria-valuemin="0" aria-valuemax="100">
+                  <div class="skill-fill" style="--pct:93%"></div>
+                </div>
+              </li>
+              <li class="skill-item">
+                <span class="skill-name">Experimentación digital</span>
+                <div class="skill-bar" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100">
+                  <div class="skill-fill" style="--pct:85%"></div>
+                </div>
+              </li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+         PROJECTS SECTION
+    ═══════════════════════════════════════════ -->
+    <section class="projects section" id="projects" aria-labelledby="projectsHeading">
+      <div class="container">
+
+        <div class="section-label reveal">
+          <span class="mono">// 03</span>
+          <span>Proyectos</span>
+        </div>
+
+        <h2 class="section-title reveal" id="projectsHeading">
+          Trabajo <span class="text-accent">seleccionado</span>
+        </h2>
+
+        <!-- Filter tabs -->
+        <div class="filter-tabs reveal" role="tablist" aria-label="Filtrar proyectos">
+          <button class="filter-btn active" data-filter="all" role="tab" aria-selected="true">Todos</button>
+          <button class="filter-btn" data-filter="web" role="tab" aria-selected="false">Web</button>
+          <button class="filter-btn" data-filter="experiment" role="tab" aria-selected="false">Experimentos</button>
+          <button class="filter-btn" data-filter="ai" role="tab" aria-selected="false">AI / Gaming</button>
+        </div>
+
+        <div class="projects-grid" id="projectsGrid">
+
+          <!-- Project 1: Web -->
+          <article class="project-card glass reveal" data-category="web" style="--delay:0s">
+            <div class="project-image" aria-hidden="true">
+              <div class="project-placeholder">
+                <i data-lucide="globe"></i>
+              </div>
+              <div class="project-overlay">
+                <span class="project-category-tag mono">Web Project</span>
+              </div>
+            </div>
+            <div class="project-body">
+              <h3 class="project-title">Portfolio Personal v1</h3>
+              <p class="project-desc">
+                Primer portafolio web con HTML, CSS y JavaScript puro.
+                Diseño responsivo con animaciones CSS3 y efectos de parallax.
+              </p>
+              <div class="project-tech">
+                <span class="tech-tag">HTML5</span>
+                <span class="tech-tag">CSS3</span>
+                <span class="tech-tag">JavaScript</span>
+              </div>
+              <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="project-link" aria-label="Ver Portfolio Personal v1 en GitHub">
+                <i data-lucide="github" aria-hidden="true"></i>
+                Ver en GitHub
+                <i data-lucide="arrow-up-right" aria-hidden="true"></i>
+              </a>
+            </div>
+          </article>
+
+          <!-- Project 2: Web -->
+          <article class="project-card glass reveal" data-category="web" style="--delay:0.05s">
+            <div class="project-image" aria-hidden="true">
+              <div class="project-placeholder">
+                <i data-lucide="layout-dashboard"></i>
+              </div>
+              <div class="project-overlay">
+                <span class="project-category-tag mono">Web Project</span>
+              </div>
+            </div>
+            <div class="project-body">
+              <h3 class="project-title">Landing Page Moderna</h3>
+              <p class="project-desc">
+                Landing page de producto con diseño glassmorphism, animaciones
+                de scroll y secciones interactivas construida con CSS Grid.
+              </p>
+              <div class="project-tech">
+                <span class="tech-tag">CSS Grid</span>
+                <span class="tech-tag">Flexbox</span>
+                <span class="tech-tag">GSAP</span>
+              </div>
+              <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="project-link" aria-label="Ver Landing Page Moderna en GitHub">
+                <i data-lucide="github" aria-hidden="true"></i>
+                Ver en GitHub
+                <i data-lucide="arrow-up-right" aria-hidden="true"></i>
+              </a>
+            </div>
+          </article>
+
+          <!-- Project 3: Experiment -->
+          <article class="project-card glass reveal" data-category="experiment" style="--delay:0.1s">
+            <div class="project-image" aria-hidden="true">
+              <div class="project-placeholder">
+                <i data-lucide="binary"></i>
+              </div>
+              <div class="project-overlay">
+                <span class="project-category-tag mono">Experiment</span>
+              </div>
+            </div>
+            <div class="project-body">
+              <h3 class="project-title">Generador de Partículas</h3>
+              <p class="project-desc">
+                Experimento de programación creativa: sistema de partículas
+                interactivo con Canvas API. El usuario controla física y color en tiempo real.
+              </p>
+              <div class="project-tech">
+                <span class="tech-tag">Canvas API</span>
+                <span class="tech-tag">JavaScript</span>
+                <span class="tech-tag">Physics</span>
+              </div>
+              <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="project-link" aria-label="Ver Generador de Partículas en GitHub">
+                <i data-lucide="github" aria-hidden="true"></i>
+                Ver en GitHub
+                <i data-lucide="arrow-up-right" aria-hidden="true"></i>
+              </a>
+            </div>
+          </article>
+
+          <!-- Project 4: AI Gaming -->
+          <article class="project-card glass reveal" data-category="ai" style="--delay:0.15s">
+            <div class="project-image" aria-hidden="true">
+              <div class="project-placeholder">
+                <i data-lucide="gamepad-2"></i>
+              </div>
+              <div class="project-overlay">
+                <span class="project-category-tag mono">AI Gaming</span>
+              </div>
+            </div>
+            <div class="project-body">
+              <h3 class="project-title">AI Character Designer</h3>
+              <p class="project-desc">
+                Herramienta de diseño de personajes de videojuego asistida por IA.
+                Genera conceptos visuales y fichas de personaje usando prompts.
+              </p>
+              <div class="project-tech">
+                <span class="tech-tag">AI Prompting</span>
+                <span class="tech-tag">Design</span>
+                <span class="tech-tag">Concept Art</span>
+              </div>
+              <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="project-link" aria-label="Ver AI Character Designer en GitHub">
+                <i data-lucide="github" aria-hidden="true"></i>
+                Ver en GitHub
+                <i data-lucide="arrow-up-right" aria-hidden="true"></i>
+              </a>
+            </div>
+          </article>
+
+          <!-- Project 5: AI Gaming -->
+          <article class="project-card glass reveal" data-category="ai" style="--delay:0.2s">
+            <div class="project-image" aria-hidden="true">
+              <div class="project-placeholder">
+                <i data-lucide="map"></i>
+              </div>
+              <div class="project-overlay">
+                <span class="project-category-tag mono">AI Gaming</span>
+              </div>
+            </div>
+            <div class="project-body">
+              <h3 class="project-title">World Builder con IA</h3>
+              <p class="project-desc">
+                Generador de mundos de juego con narración e imágenes asistidas
+                por IA. Crea lore, mapas conceptuales y ambientaciones únicas.
+              </p>
+              <div class="project-tech">
+                <span class="tech-tag">AI Tools</span>
+                <span class="tech-tag">Worldbuilding</span>
+                <span class="tech-tag">Narrative</span>
+              </div>
+              <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="project-link" aria-label="Ver World Builder con IA en GitHub">
+                <i data-lucide="github" aria-hidden="true"></i>
+                Ver en GitHub
+                <i data-lucide="arrow-up-right" aria-hidden="true"></i>
+              </a>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+         CONTACT SECTION
+    ═══════════════════════════════════════════ -->
+    <section class="contact section" id="contact" aria-labelledby="contactHeading">
+      <div class="container">
+
+        <div class="section-label reveal">
+          <span class="mono">// 04</span>
+          <span>Contacto</span>
+        </div>
+
+        <div class="contact-inner">
+
+          <div class="contact-text reveal">
+            <h2 class="section-title" id="contactHeading">
+              Hablemos sobre<br>
+              <span class="text-accent">tu próximo proyecto</span>
+            </h2>
+            <p class="contact-desc">
+              ¿Tienes una idea? ¿Un proyecto en mente? Estoy disponible para
+              colaboraciones, freelance y conversaciones interesantes sobre tecnología y diseño.
+            </p>
+          </div>
+
+          <div class="contact-links reveal" style="--delay:0.15s">
+
+            <a href="mailto:josue@example.com" class="contact-card glass" aria-label="Enviar email a Josue">
+              <div class="contact-icon" aria-hidden="true">
+                <i data-lucide="mail"></i>
+              </div>
+              <div class="contact-info">
+                <span class="contact-label mono">Email</span>
+                <span class="contact-value">josue@example.com</span>
+              </div>
+              <i data-lucide="arrow-up-right" class="contact-arrow" aria-hidden="true"></i>
+            </a>
+
+            <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="contact-card glass" aria-label="Ver perfil de GitHub de Josue">
+              <div class="contact-icon" aria-hidden="true">
+                <i data-lucide="github"></i>
+              </div>
+              <div class="contact-info">
+                <span class="contact-label mono">GitHub</span>
+                <span class="contact-value">github.com/josue</span>
+              </div>
+              <i data-lucide="arrow-up-right" class="contact-arrow" aria-hidden="true"></i>
+            </a>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ═══════════════════════════════════════════
+       FOOTER
+  ═══════════════════════════════════════════ -->
+  <footer class="footer" role="contentinfo">
+    <div class="footer-inner container">
+      <div class="footer-divider" aria-hidden="true"></div>
+
+      <div class="footer-content">
+        <!-- Left -->
+        <div class="footer-left">
+          <span class="mono footer-copy">© 2026 Josue I. Coronado</span>
+          <div class="footer-dots" aria-hidden="true">
+            <span></span><span></span><span></span>
+          </div>
+        </div>
+
+        <!-- Center decoration -->
+        <div class="footer-center" aria-hidden="true">
+          <span class="mono footer-bracket">[</span>
+          <span class="footer-signal"></span>
+          <span class="mono footer-bracket">]</span>
+        </div>
+
+        <!-- Right -->
+        <div class="footer-right">
+          <span class="footer-tagline">Creative Developer exploring AI-enhanced workflows</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Main script -->
+  <script src="script.js"></script>
+</body>
+</html>
